@@ -1,1 +1,34 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+</head>
+<body>
+  <div id="content">  
+    <iframe height="400" width="600"
+    src="https://script.google.com/macros/s/AKfycbzK8Kl7ru2Kqdz4hskC7cL0fYQeyhFua2Gbn6AYCRP3nn00Y-U/exec"
+    >Loading
+  </iframe>
+  <script>
+    const main = (() => {
+      console.log("loading page");
+      const f = document.querySelector("iframe");
+      f.onload = (e) => {
+        console.log("iframe onload");
+        const fw = f.contentWindow;
+        if (fw.length > 0) console.info("logged in");
+        else {
+          alert("Please Login!");
+          window.location = "https://accounts.google.com";
+        }
+      };
+    })();
+  </script>
+
+  </div>
+</body>
+</html>
+
